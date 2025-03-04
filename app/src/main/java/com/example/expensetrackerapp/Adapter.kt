@@ -29,7 +29,7 @@ class Adapter(private val list: List<Expense>) : RecyclerView.Adapter<Adapter.Vi
         // sets the image to the imageview from our itemHolder class
         holder.textView1.text = item.expenseName
         // sets the text to the textview from our itemHolder class
-        holder.textView2.text = item.amount.toString()
+        holder.textView2.text = String.format("%.2f",item.amount) //Format the amount to two decimal places
     }
 
     // return the number of the items in the list

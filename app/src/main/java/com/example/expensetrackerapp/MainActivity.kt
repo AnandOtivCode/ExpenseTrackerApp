@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioGroup
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -27,6 +28,21 @@ class MainActivity : AppCompatActivity() {
         val expenseNameInput = findViewById<EditText>(R.id.expenseInput)
         val amountInput = findViewById<EditText>(R.id.amountInput)
         val submitButton = findViewById<Button>(R.id.addExpenseButton)
+
+        // Handle button Click
+        submitButton.setOnClickListener{
+            val expenseName = expenseNameInput.text.toString().trim()
+            val amount = amountInput.text.toString().trim()
+
+            if(expenseName.isEmpty() || amount.isEmpty()){
+                Toast.makeText(this,"Plese fill in all fields", Toast.LENGTH_SHORT).show()
+            } else{
+                val message = "Expense Name: $expenseName\namount: $amount"
+                Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+
+            }
+
+        }
 
 
         val recyclerview: RecyclerView = findViewById(R.id.recyclerview)
