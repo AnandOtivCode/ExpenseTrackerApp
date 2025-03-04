@@ -29,7 +29,7 @@ class Adapter(private val list: List<Expense>) : RecyclerView.Adapter<Adapter.Vi
         // sets the image to the imageview from our itemHolder class
         holder.textView1.text = item.expenseName
         // sets the text to the textview from our itemHolder class
-        holder.textView2.text= String.format("$",item.amount)
+        holder.textView2.text = item.amount.toString()
     }
 
     // return the number of the items in the list
@@ -39,7 +39,7 @@ class Adapter(private val list: List<Expense>) : RecyclerView.Adapter<Adapter.Vi
 
     // Holds the views for adding it to image and text
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val textView1: TextView = itemView.findViewById(R.id.expense)
+        val textView1: TextView = itemView.findViewById(R.id.expenseName)
         val textView2: TextView = itemView.findViewById(R.id.amount)
     }
 }

@@ -45,15 +45,23 @@
         app:layout_constraintTop_toBottomOf="@+id/amountInput" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="284dp"
-        android:layout_height="334dp"
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.447"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addExpenseButton" />
+        app:layout_constraintTop_toBottomOf="@+id/addExpenseButton"
+        app:layout_constraintVertical_bias="0.129"
+        tools:listitem="@layout/card_view_design" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
-<!--// https://www.geeksforgeeks.org/android-recyclerview-in-kotlin/-->
+<!--    tools:listitem="@layout/card_view_design"   Will give me a preview of the list item-->
+<!--    android:layout_width="241dp"-->
+<!--    android:layout_height="253dp"-->
+
+    <!--// https://www.geeksforgeeks.org/android-recyclerview-in-kotlin/-->
