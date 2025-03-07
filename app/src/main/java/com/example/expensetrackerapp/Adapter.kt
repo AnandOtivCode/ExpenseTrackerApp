@@ -5,13 +5,14 @@ package com.example.expensetrackerapp
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 //  *** Used This To Make The Router : https://www.geeksforgeeks.org/android-recyclerview-in-kotlin/
 
-class Adapter(private val list: List<Expense>) : RecyclerView.Adapter<Adapter.ViewHolder>() {
+class Adapter(private val list: ArrayList<Expense>) : RecyclerView.Adapter<Adapter.ViewHolder>() {
 
     // create new views
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -30,6 +31,13 @@ class Adapter(private val list: List<Expense>) : RecyclerView.Adapter<Adapter.Vi
         holder.textView1.text = item.expenseName
         // sets the text to the textview from our itemHolder class
         holder.textView2.text = String.format("%.2f",item.amount) //Format the amount to two decimal places
+
+        holder.deleteButton.setOnClickListener{
+            list.remove(list[position])
+            //This fixed deleting issue
+            notifyItemRemoved(position)
+            notifyItemRangeChanged(position, list.size)
+        }
     }
 
     // return the number of the items in the list
@@ -41,5 +49,6 @@ class Adapter(private val list: List<Expense>) : RecyclerView.Adapter<Adapter.Vi
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textView1: TextView = itemView.findViewById(R.id.expenseName)
         val textView2: TextView = itemView.findViewById(R.id.amount)
+        val deleteButton : Button = itemView.findViewById(R.id.deleteButton)
     }
 }
