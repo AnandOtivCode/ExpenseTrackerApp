@@ -1,9 +1,12 @@
 package com.example.expensetrackerapp
 
+import android.app.DatePickerDialog
+import android.icu.util.Calendar
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -12,7 +15,10 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
+
 class MainActivity : AppCompatActivity() {
+
+    private val calender = Calendar.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -25,25 +31,22 @@ class MainActivity : AppCompatActivity() {
 
         val expenseData = ArrayList<Expense>()
 
-
-        expenseData.add(Expense("Dogdog",1.23))
-        expenseData.add(Expense("Dog",1.43))
-        expenseData.add(Expense("Dgdog",1.53))
+//Test sample to add
+//        expenseData.add(Expense("Dogdog",1.23))
+//        expenseData.add(Expense("Dog",1.43))
+//        expenseData.add(Expense("Dgdog",1.53))
 
         //Sets up and links the adapter
         val adapter = Adapter(expenseData)
         recyclerview.adapter = adapter
 
-
-
-
-
-
-
         // Get references to UI elements
         val expenseNameInput = findViewById<EditText>(R.id.expenseInput)
         val amountInput = findViewById<EditText>(R.id.amountInput)
+//        val expenseDate = findViewById<Button>(R.id.dateInput)
         val submitButton = findViewById<Button>(R.id.addExpenseButton)
+
+
 
 
         // Handle button Click
