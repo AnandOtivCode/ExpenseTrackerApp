@@ -45,4 +45,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+//        implementation(libs.androidx.)
+//    implementation(libs.androidx.navigation.ui.ktx)
+//    implementation(libs.androidx.navigation.runtime.ktx)
 }
