@@ -70,6 +70,8 @@ class MainActivity : AppCompatActivity() {
 
             }
         }
+
+//        supportFragmentManager.commit { }
     }
     override fun onStart() {
         super.onStart()
