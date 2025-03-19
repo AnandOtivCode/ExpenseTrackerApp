@@ -3,6 +3,7 @@ package com.example.expensetrackerapp
 import android.app.DatePickerDialog
 import android.icu.util.Calendar
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioGroup
@@ -22,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        Log.d("ActivityLifecycle", "Main Activity called")
 
 
         //Gets the id of the recycler view
@@ -67,25 +69,36 @@ class MainActivity : AppCompatActivity() {
 //                expenseNameInput.text.clear()
 //                amountInput.text.clear()
 
-
-
             }
-
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
+    override fun onStart() {
+        super.onStart()
+        Log.d("ActivityLifecycle", "onStart called")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("ActivityLifecycle", "onResume called")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("ActivityLifecycle", "onPause called")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d("ActivityLifecycle", "onStop called")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("ActivityLifecycle", "onDestroy called")
+    }
+
+
+
 
 
 
