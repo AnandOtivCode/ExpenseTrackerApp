@@ -30,7 +30,6 @@ class MainActivity : AppCompatActivity() {
         val recyclerview: RecyclerView = findViewById(R.id.recyclerview)
         // This creates a vertical layout Manager
         recyclerview.layoutManager = LinearLayoutManager(this)
-
         val expenseData = ArrayList<Expense>()
 
 //Test sample to add
